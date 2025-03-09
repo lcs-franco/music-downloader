@@ -3,19 +3,7 @@ import yt_dlp
 import subprocess
 
 def baixar_musica(url, pasta_destino='musicas'):
-    """
-    Baixa uma música do YouTube e converte para MP3
-    
-    Args:
-        url (str): URL do vídeo do YouTube
-        pasta_destino (str, optional): Pasta para salvar os arquivos. Padrão é 'musicas'.
-    """
     try:
-        # Criar pasta de destino se não existir
-        if not os.path.exists(pasta_destino):
-            os.makedirs(pasta_destino)
-        
-        # Configurações do yt-dlp
         ydl_opts = {
             'format': 'bestaudio/best',
             'postprocessors': [{
@@ -29,7 +17,6 @@ def baixar_musica(url, pasta_destino='musicas'):
             'no_color': True,
         }
         
-        # Baixar música
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(url, download=True)
             video_title = info_dict.get('title', None)
@@ -39,19 +26,10 @@ def baixar_musica(url, pasta_destino='musicas'):
         print(f"Erro ao baixar música: {e}")
 
 def baixar_playlist(playlist_url, pasta_destino='musicas'):
-    """
-    Baixa uma playlist completa do YouTube
-    
-    Args:
-        playlist_url (str): URL da playlist do YouTube
-        pasta_destino (str, optional): Pasta para salvar os arquivos. Padrão é 'musicas'.
-    """
     try:
-        # Criar pasta de destino se não existir
         if not os.path.exists(pasta_destino):
             os.makedirs(pasta_destino)
         
-        # Configurações do yt-dlp para playlist
         ydl_opts = {
             'format': 'bestaudio/best',
             'postprocessors': [{
@@ -65,7 +43,6 @@ def baixar_playlist(playlist_url, pasta_destino='musicas'):
             'no_color': True,
         }
         
-        # Baixar playlist
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(playlist_url, download=True)
             playlist_title = info_dict.get('title', 'Playlist')
