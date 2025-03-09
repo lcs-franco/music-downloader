@@ -1,41 +1,41 @@
-# Baixador de Músicas do YouTube
+# YouTube Music Downloader
 
-Um script simples em Python para baixar músicas e playlists do YouTube em formato MP3.
+A simple Python script to download music and playlists from YouTube in MP3 format.
 
-## Funcionalidades
+## Features
 
-- Baixar músicas individuais do YouTube
-- Baixar playlists completas
-- Conversão automática para MP3
+- Download individual songs from YouTube
+- Download complete playlists
+- Automatic conversion to MP3
 
-## Requisitos
+## Requirements
 
 - Python 3.6+
 - yt-dlp
 - FFmpeg
 
-## Como usar
+## How to use
 
-1. Instale as dependências:
+1. Install dependencies:
 
 ```
 pip install yt-dlp
 ```
 
-2. Instale o FFmpeg conforme seu sistema operacional
+2. Install FFmpeg according to your operating system
 
-3. Execute o script:
+3. Run the script:
 
 ```
-python baixador.py
+python downloader.py
 ```
 
-4. Escolha a opção desejada (1 para música única, 2 para playlist)
+4. Choose the desired option (1 for single song, 2 for playlist)
 
-5. Cole a URL do YouTube quando solicitado
+5. Paste the YouTube URL when prompted
 
-Os arquivos serão salvos na pasta "musicas" no diretório atual.
+Files will be saved in the "musicas" folder in the current directory.
 
-## Aviso
+## Notice
 
-Use este script apenas para conteúdo que você tem permissão para baixar.
+Use this script only for content you have permission to download.
